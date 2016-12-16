@@ -1,3 +1,7 @@
+#git related ignores
 .git/
+
+#intellij related ignores
 **/.idea/
+**/out/
 **/*.iml
