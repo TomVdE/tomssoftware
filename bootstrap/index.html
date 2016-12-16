@@ -23,11 +23,16 @@
       <div class=""container-fluid"> <!-- navbar will take complete width of screen -->
         <!-- Logo -->
         <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavBar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
           <a href="#" class="navbar-brand">TOM'S SW</a>
         </div>
 
         <!-- Menu Items -->
-        <div>
+        <div class="collapse navbar-collapse" id="mainNavBar">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li> <!-- active menu item = page you're currently on -->
                 <li><a href="#">About</a></li>
