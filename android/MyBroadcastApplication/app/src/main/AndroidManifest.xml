@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="broadcast.tvde.be.mybroadcastapplication">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <application
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            -->
+        </activity>
+
+        <receiver android:name=".broadcastreceivers.MyFirstBroadcastReceiver">
+
+            <!--
+            <intent-filter android:priority="10">
+                <action android:name="my.custom.action.name" />
+            </intent-filter>
+            -->
+        </receiver>
+        <receiver android:name=".MainActivity$MyThirdBroadcastReceiver">
+            <intent-filter android:priority="20">
+                <action android:name="my.custom.action.name"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcastreceivers.MySecondBroadcastReceiver">
+            <intent-filter android:priority="30">
+                <action android:name="my.custom.action.name"/>
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".broadcastreceivers.DataBroadcastReceiver">
+            <intent-filter>
+                <action android:name="my.custom.actionwithdata.name"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".Main2Activity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            -->
+        </activity>
+
+        <receiver android:name=".broadcastreceivers.SystemBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.AIRPLANE_MODE"/>
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".Main3Activity">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".StickyBroadcastActivity">
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+            -->
+        </activity>
+        <activity android:name=".IncomingCallActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <receiver android:name=".broadcastreceivers.IncomingCallReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>
