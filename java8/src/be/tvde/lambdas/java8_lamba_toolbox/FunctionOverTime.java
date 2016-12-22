@@ -23,6 +23,7 @@ public interface FunctionOverTime {
     }
 
     static FunctionOverTime polynomial(final double[] coefficients) {
+
         return time -> {
             Double sum = 0.0;
             for (int i = 0; i < coefficients.length; i++) {

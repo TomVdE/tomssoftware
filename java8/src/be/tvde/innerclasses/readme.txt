@@ -10,7 +10,12 @@ inner class can be enclosing class for another inner class --> no limit on the l
             president cannot exist without company
 - inner class has full access to all members, including private memebers, of its enclosing class
 
+Member inner class
+------------------
 
+Declared inside a class the same way a memeber field or member method is declared
+Can be declared public/private/protected or package-level
+Instance of inner class can only exist within the instance of its enclosing class
 
 
 
