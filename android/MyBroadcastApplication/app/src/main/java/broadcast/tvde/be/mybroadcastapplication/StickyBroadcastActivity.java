@@ -11,6 +11,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class StickyBroadcastActivity extends AppCompatActivity {
 
     private static final String TAG = StickyBroadcastActivity.class.getSimpleName();
@@ -71,6 +74,7 @@ public class StickyBroadcastActivity extends AppCompatActivity {
             if (status == BatteryManager.BATTERY_STATUS_FULL) {
                 Toast.makeText(context, "Battery Fully Charged", Toast.LENGTH_SHORT).show();
             }
+            ExecutorService
 
             Log.i(TAG, status + "");
         }
