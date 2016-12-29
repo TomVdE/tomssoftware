@@ -13,5 +13,10 @@ public class Predicates {
 
         Predicate<String> p3 = p1.and(p2);
 
+        Predicate<String> p4 = p1.negate();
+
+
+        System.out.println(p4.test("Hello"));
+
     }
 }
