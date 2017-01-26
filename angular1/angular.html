@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="githubViewer"> <!-- name of the module that runs this page/app -->
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="my-angular/myAngular.js"></script>
+    <script src="my-angular/github.js"></script>
+    
+    <title>Test angular 1.5</title>
+</head>
+<body ng-controller="MainCtrl">
+    <h1>{{message}}</h1>
+    <div>
+        {{error}}
+    </div>
+    {{countdown}}
+    <form name="searchUser" ng-submit="search(username)">
+        <input type="search" required placeholder="Username to find" ng-model="username"/>
+        <input type="submit" value="Search" />
+    </form>
+
+    </form>
+    <!-- we use '' because we want to tell angular that we are using a hard coded string --> 
+    <!-- This will just work, all bindings, controller functionality, ... are ok -->
+    <!-- <div ng-include="'userdetails.html'" ng-show="user"></div> -->
+
+    <div ng-show="user" id="userDetails">
+        <h2>Name: {{user.name}}</h2>
+        <img ng-src="http://www.gravatar.com/avatar/{{user.gravatar_id}}" title="{{user.name}}" ng-dblclick="helloWorld()"/>
+
+        Order:
+        <select ng-model="repoSortOrder">
+            <option value="+name">Name</option>
+            <option value="-stargazers_count">Stars</option>
+            <option value="+language">Language</option>
+        </select>
+    </div>
+    
+    <table ng-show="user">
+        <thead>
+            <th>Name</th>
+            <th>Stars</th>
+            <th>Language</th>
+        </thead>
+        <tbody>
+            <!-- we use '' when we want a hard coded order string instead of a model property 
+                orderBy:'-stargazers_count' for example --> 
+            <tr ng-repeat="repo in repos | orderBy:repoSortOrder">
+                <td>{{repo.name}}</td>
+                <td>{{repo.stargazers_count | number }}</td>
+                <td>{{repo.language}}</td>        
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
